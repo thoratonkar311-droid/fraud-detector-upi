@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPI Fraud Detector</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>UPI Screenshot Fraud Detector</h1>
+            <p class="subtitle">Real-time analysis for UPI transaction screenshots</p>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-content">
+                        <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h3m5-3v8m0 0l-3-3m3 3l3-3" stroke-linecap="round"/>
+                        </svg>
+                        <h3>Drop your screenshot here</h3>
+                        <p>or click to browse</p>
+                        <input type="file" id="fileInput" accept="image/*" hidden>
+                    </div>
+                </div>
+                
+                <div class="preview-container" id="previewContainer" style="display: none;">
+                    <img id="preview" src="" alt="Preview">
+                    <button class="change-btn" id="changeBtn">Change Image</button>
+                </div>
+                
+                <button class="analyze-btn" id="analyzeBtn" disabled>
+                    <span class="btn-text">Analyze Screenshot</span>
+                    <span class="btn-loader" style="display: none;"></span>
+                </button>
+            </div>
+
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <div class="results-header">
+                    <h2>Analysis Results</h2>
+                    <div class="confidence-meter">
+                        <div class="meter-label">Confidence Score</div>
+                        <div class="meter-bar">
+                            <div class="meter-fill" id="confidenceFill" style="width: 0%"></div>
+                        </div>
+                        <span class="meter-value" id="confidenceValue">0%</span>
+                    </div>
+                </div>
+
+                <div class="fraud-indicators" id="fraudIndicators">
+                    <!-- Indicators will be inserted here -->
+                </div>
+
+                <div class="summary-card" id="summaryCard">
+                    <h3>Analysis Summary</h3>
+                    <p id="summaryText"></p>
+                </div>
+
+                <div class="verdict" id="verdict">
+                    <!-- Verdict will be inserted here -->
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Advanced UPI Screenshot Fraud Detection System</p>
+            <p class="disclaimer">For security purposes only. Always verify transactions manually.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
